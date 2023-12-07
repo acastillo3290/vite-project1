@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin: 5rem 0rem;
+  border: 1px solid black;
+  text-align: center;
+  padding: 3rem;
+}
+
+form button {
+  margin: 1rem 0rem;
+  padding: 1rem 3rem;
+  font-size: large;
+}
+
+fieldset {
+  border: none;
+}
+
+#color-1, #color-2, #color-3 {
+  margin: 1rem 0rem;
+}
+
+#card {
+  border: 1px solid black;
+  padding: 3rem;
+  text-align: center;
+}

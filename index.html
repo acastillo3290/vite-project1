@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Color Palette</h1>
+      <form id="form">
+        <h2>Create New Palette</h2>
+        <label for="palette-title">Palette Title</label>
+        <input type="text" id="palette-title" name="palette-title">
+        <br>
+        <label for="color-1">Color #1</label>
+        <input type="color" name="color-1" id="color-1" value="#e66465">
+        <br>
+        <label for="color-2">Color #2</label>
+        <input type="color" name="color-2" id="color-2" value="#f6b73c">
+        <br>
+        <label for="color-3">Color #3</label>
+        <input type="color" name="color-3" id="color-3" value="#3baff7">
+        <fieldset id="fieldset">
+          <legend>Temperature</legend>
+          <input type="radio" name="temp" id="warm-radio" value="warm">
+          <label for="warm-radio">Warm</label>
+          <input type="radio" name="temp" id="neutral-radio" value="neutral" checked>
+          <label for="neutral-radio">Neutral</label>
+          <input type="radio" name="temp" id="cool-radio" value="cool">
+          <label for="cool-radio">Cool</label>
+        </fieldset>
+        <button>Create</button>
+      </form>
+
+      <h2>Palettes</h2>
+      <section>
+        <ul id="user-palettes"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+
+</html>
