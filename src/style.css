@@ -11,6 +11,21 @@ form {
   padding: 3rem;
 }
 
+section {
+  display: flex;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 form button {
   margin: 1rem 0rem;
   padding: 1rem 3rem;
@@ -29,4 +44,23 @@ fieldset {
   border: 1px solid black;
   padding: 3rem;
   text-align: center;
+}
+
+.default-div { 
+  display: flex;
+  flex-direction: column;
+  border:1px solid black;
+  justify-content: center;
+  margin-right: 5rem;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
 }
