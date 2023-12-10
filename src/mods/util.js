@@ -1,9 +1,7 @@
 import palettes from '../palettes.json';
 const userPalettes = document.querySelector('#user-palettes');
 
-export const getPalettes = (e) => {
-    // e.preventDefault();
-
+export const getPalettes = () => {
     palettes.forEach(element => {
         const div = document.createElement('div');
     div.className = 'default-div';
@@ -24,6 +22,27 @@ export const getPalettes = (e) => {
     </li>`;
         userPalettes.append(div);
     });
+};
+
+export const addNewElement = (value, where) => {
+    const div = document.createElement('div');
+    div.className = 'default-div';
+    div.innerHTML = `
+    <li>
+    <h1>${value['palette-title']}</h1>
+    <br>
+    <div style="background:">Text Example</div>
+    <button>Copy ${value['color-1']}</button>
+    <br>
+    <div style="background:">Text Example</div>
+    <button>Copy ${value['color-2']}</button>
+    <br>
+    <div style="background:">Text Example</div>
+    <button>Copy ${value['color-3']}</button>
+    <button>Delete</button>
+    <div>${value.temp}</div>
+    </li>`;
+    where.append(div);
 };
 
 export const uuidv4 = () => {
