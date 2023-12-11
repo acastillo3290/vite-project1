@@ -40,15 +40,15 @@ const addValue = (value) => {
 };
 
 const restoreFromLocal = () => {
-    if (!getValue()) return;
-    getValue().forEach(element => {
-        addNewElement(element, userPalettes);
-    })
+    for ( let i = 0, len = localStorage.length; i < len; ++i ) {
+        addNewElement( localStorage.getItem( localStorage.key( i ) ), userPalettes );
+        console.log(localStorage.getItem(localStorage.key(i)))
+    }
 };
 
 const main = () => {
-    restoreFromLocal();
     getPalettes();
+    restoreFromLocal();
     form.addEventListener('submit', handleSubmit);
 };
 main();
