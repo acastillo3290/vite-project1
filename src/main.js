@@ -24,10 +24,12 @@ const handleSubmit = (e) => {
     <br>
     <div style="background: ${formObj['color-3']}">Text Example</div>
     <button>Copy ${formObj['color-3']}</button>
-    <button>Delete</button>
+    <button class="delete">Delete</button>
     <div>${formObj.temp}</div>
     </li>`;
     userPalettes.append(div);
+
+    e.target.reset();
 };
 
 const getValue = (key) => getLocalStorageKey(key);
@@ -42,13 +44,22 @@ const addValue = (value) => {
 const restoreFromLocal = () => {
     for ( let i = 0, len = localStorage.length; i < len; ++i ) {
         addNewElement( localStorage.getItem( localStorage.key( i ) ), userPalettes );
-        console.log(localStorage.getItem(localStorage.key(i)))
     }
+};
+
+const handleDelete = () => {
+    const deleteButton = document.querySelectorAll(".delete");
+    deleteButton.forEach(element => {
+        element.addEventListener('click', (e) => {
+            console.log(localStorage.getItem( localStorage.key(e)));
+        });
+    });
 };
 
 const main = () => {
     getPalettes();
     restoreFromLocal();
+    handleDelete();
     form.addEventListener('submit', handleSubmit);
 };
 main();

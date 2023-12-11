@@ -7,7 +7,7 @@ export const getPalettes = () => {
     div.className = 'default-div';
     div.innerHTML = `
     <li>
-    <h1>${element.title}</h1>
+    <h1>${element.title} (Default)</h1>
       <br>
       <div style="background: ${element.colors[0]}">Text Example</div>
       <button>Copy ${element.colors[0]}</button>
@@ -17,7 +17,6 @@ export const getPalettes = () => {
       <br>
       <div style="background: ${element.colors[2]}">Text Example</div>
       <button>Copy ${element.colors[2]}</button>
-      <button>Delete</button>
       <div>${element.temperature}</div>
     </li>`;
         userPalettes.append(div);
@@ -26,23 +25,26 @@ export const getPalettes = () => {
 
 export const addNewElement = (value, where) => {
     const div = document.createElement('div');
-    div.className = 'default-div';
-    div.innerHTML = `
-    <li>
-    <h1>${value['palette-title']}</h1>
-    <br>
-    <div style="background:">Text Example</div>
-    <button>Copy ${value['color-1']}</button>
-    <br>
-    <div style="background:">Text Example</div>
-    <button>Copy ${value['color-2']}</button>
-    <br>
-    <div style="background:">Text Example</div>
-    <button>Copy ${value['color-3']}</button>
-    <button>Delete</button>
-    <div>${value.temp}</div>
-    </li>`;
-    where.append(div);
+    const data = JSON.parse(value);
+    data.forEach(element => {
+        div.className = 'default-div';
+        div.innerHTML = `
+        <li>
+        <h1>${element['palette-title']}</h1>
+        <br>
+        <div style="background: ${element['color-1']}">Text Example</div>
+        <button>Copy ${element['color-1']}</button>
+        <br>
+        <div style="background: ${element['color-2']}">Text Example</div>
+        <button>Copy ${element['color-2']}</button>
+        <br>
+        <div style="background: ${element['color-3']}">Text Example</div>
+        <button>Copy ${element['color-3']}</button>
+        <button class="delete">Delete</button>
+        <div>${element.temp}</div>
+        </li>`;
+        where.append(div);
+    })
 };
 
 export const uuidv4 = () => {
